@@ -85,7 +85,7 @@ class GenerateComposerFile {
 	 * @param {object} json The composer file contents
 	 * @returns {void}
 	 */
-	async write(dir, json = this.composer) {
+	async write(dir = this.dir, json = this.composer) {
 		const file = path.join(dir, 'composer.json');
 		const jsonString = JSON.stringify(json, null, 2);
 		// Delete the prev one if it already exists.
