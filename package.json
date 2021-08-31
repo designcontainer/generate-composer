@@ -1,0 +1,36 @@
+{
+	"name": "@designcontainer/generate-composer",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/index.js",
+	"bin": {
+		"@designcontainer/generate-composer": "bin/generate-composer",
+		"generate-composer": "bin/generate-composer"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/designcontainer/generate-composer.git"
+	},
+	"keywords": [
+		"cli",
+		"generate-composer"
+	],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/designcontainer/generate-composer/issues"
+	},
+	"homepage": "https://github.com/designcontainer/generate-composer#readme",
+	"dependencies": {
+		"axios": "^0.21.1",
+		"esm": "^3.2.25",
+		"keytar": "^7.7.0",
+		"prompt": "^1.2.0"
+	}
+}
