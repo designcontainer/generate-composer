@@ -1,3 +1,7 @@
+# Generate Composer
+
+Node module for generating and updating composer files for DC WordPress sites.
+
 ![npm](https://img.shields.io/npm/v/@designcontainer/generate-composer)
 
 ## Installation
