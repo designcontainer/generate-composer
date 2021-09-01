@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/v/@designcontainer/generate-composer)
+
 ## Installation
 
 ```bash
