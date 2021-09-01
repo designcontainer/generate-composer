@@ -12,6 +12,14 @@ cd into a the root directory of a WordPress repository and run:
 generate-composer
 ```
 
+The first time running the CLI, you will be prompted to enter you GitHub API token. This will be saved in your os' keychain.
+
+To set a new token run:
+
+```bash
+generate-composer --github-token
+```
+
 ## API
 
 cd into a the root directory of a WordPress repository and run:
