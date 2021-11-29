@@ -53,7 +53,11 @@ class GenerateComposerFile {
 		// Get original composer file
 		this.composer = await this.get();
 
+		// Remove all old packages that were hosted on bitbucket.
 		this.removeOldPackages();
+
+		// Make sure the name is always this.name
+		this.composer.name = this.name;
 
 		for (const plugin of plugins) {
 			if (this.isPluginIgnored(plugin)) {
@@ -68,7 +72,6 @@ class GenerateComposerFile {
 				this.failed.push(plugin);
 			}
 		}
-
 		return this.output();
 	}
 
