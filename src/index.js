@@ -53,6 +53,8 @@ class GenerateComposerFile {
 		// Get original composer file
 		this.composer = await this.get();
 
+		this.removeOldPackages();
+
 		for (const plugin of plugins) {
 			if (this.isPluginIgnored(plugin)) {
 				this.ignored.push(plugin);
@@ -181,6 +183,23 @@ class GenerateComposerFile {
 		Object.assign(this.composer.require, {
 			[`designcontainer/${plugin}`]: '*',
 		});
+	}
+
+	/**
+	 * Remove old packages from composer
+	 *
+	 * @returns {void}
+	 */
+	removeOldPackages() {
+		this.addObjectIfMissing('repositories');
+		this.addObjectIfMissing('require');
+		const oldAccounts = ['dctechy', 'designcontaineroslo'];
+		this.composer.repositories = this.composer.repositories.filter(
+			(repo) => !oldAccounts.some((account) => repo.url.includes(account))
+		);
+		this.composer.require = Object.fromEntries(
+			Object.entries(this.composer.require).filter((req) => !oldAccounts.includes(req[0].split('/')[0]))
+		);
 	}
 
 	/**
